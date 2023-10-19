@@ -92,5 +92,4 @@ public class CsvReader {
         }
         return -1;
     }
-
 }

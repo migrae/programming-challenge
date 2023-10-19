@@ -41,7 +41,15 @@ public class CountryDatabase {
         }
     }
 
-    public void loadDataFromReader(Map<String, Pair<Float, Float>> readerData) {
+    public void setData(Map<String, Pair<Float, Float>> readerData) {
         data = readerData;
+    }
+
+    public Map<String, Pair<Float, Float>> getData() {
+        return this.data;
+    }
+
+    public List<String> getRelevantKeys() {
+        return this.relevantKeys;
     }
 }

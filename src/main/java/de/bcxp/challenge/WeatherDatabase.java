@@ -40,15 +40,16 @@ public class WeatherDatabase {
         }
     }
 
-    private void printRelevantKeys(float value) {
-        for (String key : relevantKeys) {
-            System.out.println("Day " + key + ": smallest Temperature Change of " + value);
-        }
-    }
-
-    public void loadDataFromReader(Map<String, Pair<Float, Float>> readerData) {
+    public void setData(Map<String, Pair<Float, Float>> readerData) {
         data = readerData;
     }
 
+    public Map<String, Pair<Float, Float>> getData() {
+        return this.data;
+    }
+
+    public List<String> getRelevantKeys() {
+        return this.relevantKeys;
+    }
 }
 
