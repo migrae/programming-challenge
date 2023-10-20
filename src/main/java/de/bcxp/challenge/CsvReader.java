@@ -40,6 +40,9 @@ public class CsvReader {
                     return null;
                 }
             }
+            if (data.size()	== 0) {
+                 System.err.println("Empty csv file");
+            }
         } catch (IOException e) {
             System.err.println("Can't open file");
             return null;
