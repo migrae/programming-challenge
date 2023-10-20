@@ -1,0 +1,42 @@
+[
+  {
+    "Name": "Austria",
+    "Capital": "Vienna",
+    "Accession": 1995,
+    "Population": 8926000,
+    "Area (km²)": 83855,
+    "GDP (US$ M)": 447718,
+    "HDI": 0.922,
+    "MEPs": 19
+  },
+  {
+    "Name": "Belgium",
+    "Capital": "Brussels",
+    "Accession": "Founder",
+    "Population": 11566041,
+    "Area (km²)": 30528,
+    "GDP (US$ M)": 517609,
+    "HDI": 0.931,
+    "MEPs": 21
+  },
+  {
+    "Name": "Bulgaria",
+    "Capital": "Sofia",
+    "Accession": 2007,
+    "Population": 6916548,
+    "Area (km²)": 110994,
+    "GDP (US$ M)": 66250,
+    "HDI": 0.816,
+    "MEPs": 17
+  },
+  {
+    "Name": "Croatia",
+    "Capital": "Zagreb",
+    "Accession": 2013,
+    "Population": 4036355,
+    "Area (km²)": 56594,
+    "GDP (US$ M)": 60702,
+    "HDI": 0.851,
+    "MEPs": 12
+  }
+]

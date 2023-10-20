@@ -24,7 +24,7 @@ public class CsvReader {
     }
 
     public Map<String, Pair<Float, Float>> read() {
-        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(this.file))) {
             String line = br.readLine();
             columnValueOne = getColumnForValue(line, valueOne);
             columnValueTwo = getColumnForValue(line, valueTwo);

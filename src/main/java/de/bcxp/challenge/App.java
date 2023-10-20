@@ -21,14 +21,17 @@ public final class App {
         //set CSV Paths
         String weatherFilePath = "src/main/resources/de/bcxp/challenge/weather.csv";
         String countryFilePath = "src/main/resources/de/bcxp/challenge/countries.csv";
+        String weatherJsonFilePath = "src/main/resources/de/bcxp/challenge/weather.json";
 
         //load reader instances with parameters
         CsvReader csvWeatherReader = new CsvReader(weatherFilePath, ',', "MxT", "MnT");
         CsvReader csvCountryReader = new CsvReader(countryFilePath, ';', "Population", "Area (km²)");
+        JsonReader jsonReader = new JsonReader(weatherJsonFilePath, "MxT", "MnT");
 
         //get data from readers
         Map<String, Pair<Float, Float>> weatherData = csvWeatherReader.read();
         Map<String, Pair<Float, Float>> countryData = csvCountryReader.read();
+        jsonReader.getKeyJump();
 
         //initiate databases
         WeatherDatabase weather = new WeatherDatabase(weatherData);
