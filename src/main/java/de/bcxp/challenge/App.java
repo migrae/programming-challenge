@@ -21,27 +21,30 @@ public final class App {
         //set CSV Paths
         String weatherFilePath = "src/main/resources/de/bcxp/challenge/weather.csv";
         String countryFilePath = "src/main/resources/de/bcxp/challenge/countries.csv";
-        String weatherJsonFilePath = "src/main/resources/de/bcxp/challenge/weather.json";
+        String countryJsonFilePath = "src/main/resources/de/bcxp/challenge/countries.json";
 
         //load reader instances with parameters
         CsvReader csvWeatherReader = new CsvReader(weatherFilePath, ',', "MxT", "MnT");
         CsvReader csvCountryReader = new CsvReader(countryFilePath, ';', "Population", "Area (km²)");
-        JsonReader jsonReader = new JsonReader(weatherJsonFilePath, "MxT", "MnT");
+        JsonReader jsonReader = new JsonReader("Name", countryJsonFilePath, "Population", "Area (km²)");
 
         //get data from readers
         Map<String, Pair<Float, Float>> weatherData = csvWeatherReader.read();
         Map<String, Pair<Float, Float>> countryData = csvCountryReader.read();
-        jsonReader.getKeyJump();
+        Map<String, Pair<Float, Float>> countryJsonData = jsonReader.read();
 
         //initiate databases
         WeatherDatabase weather = new WeatherDatabase(weatherData);
         CountryDatabase country = new CountryDatabase(countryData);
+        CountryDatabase countryJson = new CountryDatabase(countryJsonData);
 
         //calculate (changed to List<String> because of the possibility of multiple solutions)
         List<String> weatherDays = weather.calculate();
+        List<String> denseCountryJson = countryJson.calculate();
         List<String> denseCountries = country.calculate();
 
         System.out.printf("Day(s) with smallest temperature spread: %s%n", weatherDays);
         System.out.printf("Country/Countries with highest population density: %s%n", denseCountries);
+        System.out.printf("Country/Countries with highest population density using Json Reader and a smaller Json file: %s%n", denseCountryJson);
     }
 }
